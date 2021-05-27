@@ -20,7 +20,7 @@ kube-deploy-cluster:
 	aws iam attach-role-policy --role-name nodes.rmit.k8s.local --policy-arn arn:aws:iam::aws:policy/AdministratorAccess | echo "Hack"
 
 kube-validate:
-	kops validate cluster --state=s3://$(shell cd infra && terraform output kops_state_bucket_name)
+	kops validate cluster --state=s3://$(shell cd infra && terraform output kops_state_bucket_name | xargs)
 
 kube-config:
 	kops export kubecfg --state=s3://$(shell cd infra && terraform output kops_state_bucket_name)
