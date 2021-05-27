@@ -11,10 +11,10 @@ spec:
     metadata:
       labels:
         app: "2048"
-      spec:
-        containers:
-        - image: alexwhen/docker-2048
-          iamgePullPolicy: Always
-          name: "2048"
-          ports: 
-          - containerPort: 80
+    spec:
+      containers:
+      - image: alexwhen/docker-2048
+        iamgePullPolicy: Always
+        name: "2048"
+        ports: 
+        - containerPort: 80
